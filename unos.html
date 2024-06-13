@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unos</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="validation.js"></script>
+</head>
+<body>
+    <form enctype="multipart/form-data" action="skripta.php" method="POST" onsubmit="return validateForm()">
+        <div class="form-item">
+            <label for="title">Naslov vijesti</label>
+            <input type="text" name="title" id="title" class="form-field-textual">
+            <span id="porukaTitle" class="bojaPoruke"></span>
+        </div>
+        <div class="form-item">
+            <label for="about">Kratki sadržaj vijesti (do 100 znakova)</label>
+            <textarea name="about" id="about" cols="30" rows="10" class="form-field-textual"></textarea>
+            <span id="porukaAbout" class="bojaPoruke"></span>
+        </div>
+        <div class="form-item">
+            <label for="content">Sadržaj vijesti</label>
+            <textarea name="content" id="content" cols="30" rows="10" class="form-field-textual"></textarea>
+            <span id="porukaContent" class="bojaPoruke"></span>
+        </div>
+        <div class="form-item">
+            <label for="pphoto">Slika: </label>
+            <input type="file" id="pphoto" name="pphoto" class="input-text">
+            <span id="porukaSlika" class="bojaPoruke"></span>
+        </div>
+        <div class="form-item">
+            <label for="category">Kategorija vijesti</label>
+            <select name="category" id="category" class="form-field-textual">
+                <option value="" disabled selected>Odabir kategorije</option>
+                <option value="sport">Sport</option>
+                <option value="kultura">Kultura</option>
+            </select>
+            <span id="porukaKategorija" class="bojaPoruke"></span>
+        </div>
+        <div class="form-item">
+            <label>Spremiti u arhivu:  
+                <input type="checkbox" name="archive" id="archive">
+            </label>
+        </div>
+        <div class="form-item">
+            <button type="reset" value="Poništi">Poništi</button>
+            <button type="submit" value="Prihvati" id="slanje">Prihvati</button>
+        </div>
+    </form>
+</body>
+</html>
